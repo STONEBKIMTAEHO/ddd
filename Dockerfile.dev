@@ -1,0 +1,14 @@
+FROM node:alpine
+
+WORKDIR /usr/src/app
+
+COPY package.json ./
+
+RUN npm install
+
+# VOLUME /usr/src/app
+# VOLUME /usr/src/app/node_modules
+
+COPY ./ ./
+
+CMD ["npm", "run", "start"]
